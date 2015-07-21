@@ -1,0 +1,105 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Orpheus | Propylon Projects</title>
+    <!-- <base href="/"> -->
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,400italic,700italic|Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!-- Prod -->
+    <!-- <link rel="stylesheet" href="assets/css/main.min.css"> -->
+
+    <!-- Dev -->
+    <link rel="stylesheet" href="assets/css/main.css">
+
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <header>
+      <a href title="Dashboard" class="header-links">
+        <div class="header--logo">
+            <img src="assets/img/propylon-logo.png " alt="propylon Logo" />
+            <i class="fa fa-home"></i>
+        </div>
+        <h1>Orpheus</h1>
+      </a>
+    </header>
+
+    <nav class="navBar-tools">
+      <div class="navBar--addProject" onclick="routeLink('addProject')">
+        <i class="fa fa-plus"></i>
+        <!-- <span>Add a project</span> -->
+      </div>
+      <div class="navBar--filters">
+        <span>Filters</span>
+      </div>
+      <div class="navBar--search">
+        <label>
+          <i class="fa fa-search"></i>
+          <input type="search" id="search" ng-model="search" class="navBar---searchInput" title="search" placeholder="Search..." />
+        </label>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="dashboard modify">
+        <section class="dashboard-projects">
+          <article class="dashboard--project regView" data-value="regView" onmouseover="projectMouseover('regView')" onmouseout="projectMouseout()" onclick="projectClick('regView')">
+            <i class="fa fa-code dashboard---projectDevelopment"></i>
+            <div class="dashboard---projectTitle">
+              <h2>RegView</h2>
+              <hr><hr class="hrLoader">
+              <h3>OAGSUPP-1</h3>
+            </div>
+            <footer>
+              <p class="dashboard---lastUpdate">
+                <i class="fa fa-clock-o"></i>
+                Last update: <span>08-04-2015</span>
+              </p>
+            </footer>
+          </article>
+
+          <article class="dashboard--project piwig" data-value="piwig" onmouseover="projectMouseover('piwig')" onmouseout="projectMouseout()" onclick="projectClick('piwig')">
+            <div class="dashboard---projectTitle">
+              <h2>Piwig</h2>
+              <hr><hr class="hrLoader">
+              <h3>PIWPEWPEW</h3>
+            </div>
+            <footer>
+              <p class="dashboard---lastUpdate">
+                <i class="fa fa-clock-o"></i>
+                Last update: <span>08-04-2015</span>
+              </p>
+            </footer>
+          </article>
+
+          <article class="dashboard--project eisb" data-value="eisb" onmouseover="projectMouseover('eisb')" onmouseout="projectMouseout()" onclick="projectClick('eisb')">
+            <div class="dashboard---projectTitle">
+              <h2>eISB</h2>
+              <hr><hr class="hrLoader">
+              <h3>EISB00</h3>
+            </div>
+            <footer>
+              <p class="dashboard---lastUpdate">
+                <i class="fa fa-clock-o"></i>
+                Last update: <span>08-04-2015</span>
+              </p>
+            </footer>
+          </article>
+
+        </section>
+      </div>
+    </div>
+
+    <script src="assets/bower_components/jquery/dist/jquery.js"></script>
+    <script src="assets/js/dashboard.min.js"></script>
+</body>
+</html>
+

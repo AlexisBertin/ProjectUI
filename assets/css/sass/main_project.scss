@@ -1,0 +1,285 @@
+@import "bourbon/bourbon";
+@import "_variables.scss";
+
+.project {
+	margin: 0 auto 150px auto;
+	background: #fff;
+	padding: 20px;
+	width: 70%;
+	@include transition(all 0.2s ease-out);
+
+  header {
+  	margin-bottom: 4.8rem;
+  	.project--backDash {
+  	  position: absolute;
+  	  display: block;
+  	  left: 35px;
+  	  top: 30px;
+  	}
+  	.project--edit {
+  		position: absolute;
+  		top: 35px;
+  		right: 35px;
+  		display: block;
+  		font-size: 2rem;
+  		padding: 5px;
+  		color: $blue;
+  		opacity: 0.6;
+  		@include transition(all 0.2s ease-out);
+  		&:hover {
+  			opacity: 1;
+  		}
+  	}
+  	.project--projectTitle {
+  	  text-align: center;
+  	  display: block;
+  	  margin-top: 6rem;
+  	  &, h2, hr, h3 {
+  	    @include transition(all 0.2s ease-out);
+  	  }
+  	  h1 {
+  	    font-size: 12rem;
+  	    line-height: 1.3;
+  	    font-family: $font-serif;
+  	    color: rgba(0,0,0,1);
+  	    margin-bottom: 0.8rem;
+  	    @include transition(font-size 0.2s ease-out);
+  	  }
+  	  h3 {
+  	    color: rgba(0,0,0,0.4);
+  	    padding-top: 0px;
+  	  }
+  	}
+  }
+
+  ul.project-date li,
+  ul.project-links li {
+  	font-size: 1.4rem;
+  	color: rgba(0,0,0,0.4);
+  	line-height: 2.4rem;
+  	span {
+  	  color: rgba(0,0,0,0.8);
+  	}
+  }
+
+  ul.project-date {
+  	float: left;
+  	display: block;
+  	li {
+	  	text-align: left;
+	  	.project--projectDevelopment {
+	  		font-weight: bold;
+	  		color: $blue;
+	  		font-size: 1.1rem;
+	  		&:after {
+	  		  content: "In development";
+	  		  display: inline-block;
+	  		  position: relative;
+	  		  margin-left: 5px;
+	  		  font-size: 1.4rem;
+	  		  font-weight: normal;
+	  		  color: rgba(63,81,181,0.6);
+	  		  @include transition(all 0.2s ease-out);
+	  		  /*opacity: 0;
+	  		  @include transform(translateY(-10px));*/
+	  		}
+	  	}
+	  }
+  }
+  ul.project-links {
+  	float: right;
+  	display: block;
+  	li {
+  		text-align: right;
+  	}
+  }
+
+  main {
+  	float: none;
+  	clear: both;
+
+
+  	h2 {
+  	  margin-top: 110px;
+  	  margin-bottom: 15px;
+  	  padding-top: 80px;
+  	  padding-bottom: 15px;
+  	  color: rgba(0, 0, 0, 0.8);
+  	  font-family: $font-serif;
+  	  font-size: 5rem;
+  	  /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
+  	  letter-spacing: 0px;
+  	  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  	  @include transition(all 0.2s ease-out);
+  	  &:first-child { margin-top: 250px; }
+  	}
+  	div.content {
+  		margin: 0 auto 2.4rem auto;
+  		p {
+  			display: block;
+  			font-size: 1.8rem;
+  			line-height: 1.5;
+  			color: rgba(0,0,0,0.8);
+  			font-family: $font-serif;
+  			@include column-count(2);
+  		}
+  	}
+
+  	ul.contentToc {
+  		margin-top: 30px;
+  		li {
+  			a {
+  				font-size: 1.8rem;
+  				display: block;
+  				padding: 10px 5px;
+  				text-decoration: none;
+  				color: rgba(0, 0, 0, 0.4);
+  				position: relative;
+  				font-family: $font-serif;
+  				&:hover {
+  					color: #000;
+  					span {
+  						margin-right: 10px;
+  					}
+  				}
+
+  				&,
+  				& span { @include transition(all 0.1s ease-out); }
+  				span {
+  					display: inline-block;
+  					text-align: center;
+  					font-weight: 700;
+  					margin-right: 5px;
+  					color: $blue;
+  					font-family: $font-sansserif;
+  				}
+  			}
+  		}
+  	}
+
+  	ul.contentTocChildren li a { padding: 10px 5px 10px 40px; }
+  	ul.contentTocChildren.nested li a { padding: 10px 5px 10px 80px; }
+
+  	/*ul.contentTocChildren {
+  		& > li &:before {
+  			content: '-';
+  			font-weight: 500;
+  			display: inline-block;
+  			font-size: 2rem;
+  			color: rgba(0,0,0,0.3);
+  			margin-left: 25px;
+  		}
+
+  		&.nested > li:before {
+  			content: '--';
+  			font-weight: 500;
+  			display: inline-block;
+  			font-size: 2rem;
+  			color: rgba(0,0,0,0.3);
+  			margin-left: 50px;
+  		}
+  	}*/
+  }
+
+
+
+}
+
+
+footer {
+	.project--backDash {
+	  position: absolute;
+	  display: block;
+	  left: 35px;
+	  bottom: 50px;
+	}
+}
+
+
+
+/* --- Back to Dashboard button - Header & Footer --- */
+	.project header .project--backDash,
+	footer .project--backDash {
+	  position: absolute;
+	  display: block;
+	  padding: 10px 5px;
+	  color: rgba(63,81,181,0.6);
+	  text-decoration: none;
+	  font-size: 1.6rem;
+	  &:hover {
+	  	color: $blue;
+	  	i.fa { margin-right: 10px; }
+	  }
+	  &,
+	  & i.fa {
+	  	@include transition(all 0.2s ease-out);
+	  }
+	 	i.fa {
+	 		color: $blue;
+	 		display: inline-block;
+	 		margin-right: 5px;
+	 	}
+	}
+/* -------------------------------------------------- */
+
+
+@media screen and (max-width: 1100px){
+	main div.content p {
+		@include column-count(1 !important);
+	}
+}
+@media screen and (max-width: 900px){
+	.project  {
+		width: 80%;
+	}
+}
+@media screen and (max-width: 750px){
+	.project  {
+		width: 90%;
+		header .project--projectTitle h1 {
+			font-size: 10rem;
+		}
+		ul.project-date,
+		ul.project-links {
+			float: none;
+			li {
+				text-align: center;
+				margin: 10px auto;
+				font-size: 1.6rem;
+			}
+		}
+		main h2:first-child {
+			margin-top: 110px;
+		}
+	}
+}
+@media screen and (max-width: 600px){
+	.project  {
+		width: 96%;
+		header .project--projectTitle h1 {
+			font-size: 8rem;
+		}
+		main h2 { font-size: 4rem; }
+	}
+}
+@media screen and (max-width: 450px){
+	.project main div.content p {
+		font-size: 1.6rem;
+	}
+}
+@media screen and (max-width: 400px){
+	.project {
+		header .project--projectTitle h1 {
+			font-size: 6rem;
+		}
+		main {
+			h2 {
+				font-size: 3rem;
+				text-align: center;
+			}
+			div.content p {
+				font-size: 1.4rem;
+			}
+		}
+	}
+}

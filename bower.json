@@ -1,0 +1,21 @@
+{
+  "name": "orpheus-html-templates-static",
+  "version": "0.0.0",
+  "authors": [
+    "Alexis Bertin <alexis.bertin@propylon.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.5"
+  },
+  "devDependencies": {
+    "bootstrap-sass-official": "~3.3.5"
+  }
+}

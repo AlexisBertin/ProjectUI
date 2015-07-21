@@ -1,0 +1,395 @@
+@import "bourbon/bourbon";
+@import "_variables.scss";
+
+/* ------ Dashboard Overlay ------ */
+.addProject {
+  background: $blue;
+
+  &,
+  .addProject-background,
+  .addProject-content {
+    position: absolute;
+    width: 100%;
+    min-height: calc(100% - 50px);
+    height: auto;
+    margin: 50px auto 0 auto;
+    top: 0;
+    left: 0;
+    @include transition(all 0.2s ease-out);
+  }
+
+
+
+  .addProject-content {
+    z-index: 2;
+    background: rgba(63,81,181,0.9);
+
+    .addProject_control {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: auto;
+      width: 70px;
+      height: 70px;
+      z-index: 110;
+      button {
+        position: relative;
+        display: block;
+        border: 0;
+        background: none;
+        width: 100%;
+        height: 100%;
+        i.fa {
+          color: #fff;
+          font-size: 1.6rem;
+        }
+      }
+    }
+
+    form {
+      position: fixed;
+      display: block;
+      width: 70%;
+      height: 70%;
+      margin: auto;
+      right: 0;
+      left: 0;
+      overflow: hidden;
+
+      .input {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 120px;
+        overflow: hidden;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 1;
+        z-index: 100;
+
+        @include transition(all 0.4s cubic-bezier(.39,.01,.2,.98));
+      }
+      .hiddenValid {
+        opacity: 0 !important;
+        z-index: 50 !important;
+        @include transform(translateY(-40px));
+      }
+      .hiddenUnvalid {
+        opacity: 0 !important;
+        z-index: 50 !important;
+        @include transform(translateY(40px));
+      }
+
+      .input__field {
+        position: relative;
+        display: block;
+        float: right;
+        margin-top: 26px;
+        border: none;
+        border-radius: 0;
+        font-family: $font-serif;
+        -webkit-appearance: none;
+        padding: 22px 15px 23px 15px;
+        width: 100%;
+        background: rgba(57, 73, 163, 0.8);
+        color: #fff;
+        font-size: 2rem;
+      }
+
+      .input__field:focus {
+        outline: none;
+      }
+
+      .input__label {
+        float: right;
+        color: rgba(255,255,255,.5);
+        -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        position: absolute;
+        top: 17px;
+        font-size: 2rem;
+        left: 15px;
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 0em;
+        pointer-events: none;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transition: -webkit-transform 0.3s 0.1s, color 1s;
+        transition: transform 0.3s 0.1s, color 1s;
+        -webkit-transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+        transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+      }
+
+
+      .input__label-content {
+        position: relative;
+        display: block;
+        padding: 1.6em 0;
+        width: 100%;
+      }
+
+      .graphic {
+        position: absolute;
+        top: -16px;
+        left: 0;
+        fill: none;
+        stroke-width: 4px;
+        stroke: rgb(47, 62, 143);
+        pointer-events: none;
+        -webkit-transition: -webkit-transform 0.7s, stroke 0.7s;
+        transition: transform 0.7s, stroke 0.7s;
+        -webkit-transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+        transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+      }
+
+      .icon {
+        color: #ddd;
+        font-size: 150%;
+      }
+
+
+      .input__field:focus + .input__label,
+      .input--filled .input__label {
+        color: rgba(255,255,255,1);
+        -webkit-transform: translate3d(0, -1.8em, 0) scale3d(0.75, 0.75, 1);
+        transform: translate3d(0, -1.8em, 0) scale3d(0.75, 0.75, 1);
+      }
+
+      .input__field:focus ~ .graphic,
+      .input--filled .graphic {
+        stroke: rgba(255,255,255,1);
+        -webkit-transform: translate3d(-66.6%, 0, 0);
+        transform: translate3d(-66.6%, 0, 0);
+      }
+    }
+  }
+}
+/* ------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*h2 {
+    font-family: $font-sansserif;
+    font-size: 19rem;
+    height: 89rem;
+    line-height: 1.2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    color: #fff;
+  }*/
+
+
+
+
+
+.addProject-background {
+  z-index: 1;
+  color: #fff;
+  position: relative !important;
+  margin: 0 auto 150px auto !important;
+  padding: 20px ;
+  width: 75% !important;
+  overflow: hidden;
+  @include transition(all 0.2s ease-out);
+
+  header {
+    margin-bottom: 4.8rem;
+    .project--backDash {
+      position: absolute;
+      display: block;
+      left: 35px;
+      top: 30px;
+    }
+    .project--edit {
+      position: absolute;
+      top: 35px;
+      right: 35px;
+      display: block;
+      font-size: 2rem;
+      padding: 5px;
+      color: #fff;
+      opacity: 0.6;
+      @include transition(all 0.2s ease-out);
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .project--projectTitle {
+      text-align: center;
+      display: block;
+      margin-top: 6rem;
+      &, h2, hr, h3 {
+        @include transition(all 0.2s ease-out);
+      }
+      h1 {
+        font-size: 12rem;
+        line-height: 1.3;
+        font-family: $font-serif;
+        color: #fff;
+        margin-bottom: 0.8rem;
+        @include transition(font-size 0.2s ease-out);
+      }
+      h3 {
+        color: rgba(255,255,255,0.4);
+        padding-top: 0px;
+      }
+    }
+  }
+
+  ul.project-date li,
+  ul.project-links li {
+    font-size: 1.4rem;
+    color: rgba(255,255,255,0.4);
+    line-height: 2.4rem;
+    span {
+      color: rgba(255,255,255,0.8);
+    }
+  }
+
+  ul.project-date {
+    float: left;
+    display: block;
+    li {
+      text-align: left;
+      .project--projectDevelopment {
+        font-weight: bold;
+        color: #fff;
+        font-size: 1.1rem;
+        &:after {
+          content: "In development";
+          display: inline-block;
+          position: relative;
+          margin-left: 5px;
+          font-size: 1.4rem;
+          font-weight: normal;
+          color: rgba(255,255,255,0.6);
+          @include transition(all 0.2s ease-out);
+          /*opacity: 0;
+          @include transform(translateY(-10px));*/
+        }
+      }
+    }
+  }
+  ul.project-links {
+    float: right;
+    display: block;
+    li {
+      text-align: right;
+    }
+  }
+
+  main {
+    float: none;
+    clear: both;
+
+    h2 {
+      margin-top: 110px;
+      margin-bottom: 15px;
+      padding-top: 80px;
+      padding-bottom: 15px;
+      color: #fff;
+      font-family: $font-serif;
+      font-size: 5rem;
+      letter-spacing: 0px;
+      border-top: 1px solid rgba(255,255,255, 0.4);
+      @include transition(all 0.2s ease-out);
+      &:first-child { margin-top: 250px; }
+    }
+    div.content {
+      margin: 0 auto 2.4rem auto;
+      p {
+        display: block;
+        font-size: 1.8rem;
+        line-height: 1.5;
+        color: rgba(255,255,255,0.8);
+        font-family: $font-serif;
+        @include column-count(2);
+      }
+    }
+
+    ul.contentToc {
+      margin-top: 30px;
+      li {
+        a {
+          font-size: 1.8rem;
+          display: block;
+          padding: 10px 5px;
+          text-decoration: none;
+          color: rgba(255,255,255, 0.4);
+          position: relative;
+          font-family: $font-serif;
+         /* &:hover {
+            color: #000;
+            span {
+              margin-right: 10px;
+            }
+          }*/
+
+          &,
+          & span { @include transition(all 0.1s ease-out); }
+          span {
+            display: inline-block;
+            text-align: center;
+            font-weight: 700;
+            margin-right: 5px;
+            color: #fff;
+            font-family: $font-sansserif;
+          }
+        }
+      }
+    }
+
+    ul.contentTocChildren li a { padding: 10px 5px 10px 40px; }
+    ul.contentTocChildren.nested li a { padding: 10px 5px 10px 80px; }
+
+    /*ul.contentTocChildren {
+      & > li &:before {
+        content: '-';
+        font-weight: 500;
+        display: inline-block;
+        font-size: 2rem;
+        color: rgba(0,0,0,0.3);
+        margin-left: 25px;
+      }
+
+      &.nested > li:before {
+        content: '--';
+        font-weight: 500;
+        display: inline-block;
+        font-size: 2rem;
+        color: rgba(0,0,0,0.3);
+        margin-left: 50px;
+      }
+    }*/
+  }
+
+}

@@ -1,0 +1,207 @@
+@import "bourbon/bourbon";
+@import "_variables.scss";
+
+
+/* ---- Nav - Tools bar ---- */
+  nav.navBar-tools {
+    position: fixed;
+    display: inline-block;
+    width: calc(100% - 160px);
+    top: 0;
+    border-bottom: 1px solid $greyBorder;
+    /*margin: 0 0.5% 12px 0.5%;*/
+    height: 50px;
+    margin-left: 160px;
+    background-color: #fff;
+    z-index: $zIndex-navBar;
+    opacity: 1;
+    @include transition(all 0.4s cubic-bezier(.39,.01,.2,.98));
+
+
+    &.hideNav {
+      @include transform(translateY(-50px));
+      opacity: 0;
+    }
+
+
+    & > div {
+      background: #fff;
+      /*@extend .boxShadowGlobal;*/
+      padding: 3px 0 7px 0px;
+      height: 49px;
+      float: right;
+      @include transition(all 0.4s cubic-bezier(.39,.01,.2,.98));
+      border-left: 1px solid $greyBorder;
+      cursor: pointer;
+
+      span {
+        display: inline-block;
+        height: 100%;
+        padding: 10px;
+        font-size: 1.6rem;
+        line-height: 1.5;
+        color: rgba(0, 0, 0, 0.2);
+
+        @include transition(all 0.2s ease-out);
+      }
+
+      &:hover,
+      &:focus {
+        span, i {
+          color: $blue !important;
+          opacity: 1;
+        }
+      }
+    }
+
+    .navBar--search {
+      overflow: hidden;
+      padding: 4px 0 6px 9px;
+      cursor: text;
+      label {
+        margin-bottom: 0;
+        i.fa {
+          cursor: text;
+          color: rgba(0,0,0,0.2);
+          font-size: 1.6rem;
+          padding: 10px;
+          @include transition(all 0.2s ease-out);
+        }
+
+        input {
+          width: 0px;
+          opacity: 0;
+          padding: 8px 5px 12px 0;
+          line-height: 1.5;
+          font-size: 1.6rem;
+          color: $blue;
+          background: rgba(255,255,255,0);
+          border: 0;
+          outline: 0;
+          @include transition(all 0.4s cubic-bezier(.39,.01,.2,.98));
+          &::-webkit-input-placeholder {
+            color: rgba(63,81,181,0.6);
+            font-weight: 100;
+            margin-top: -2px;
+          }
+          &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: rgba(63,81,181,0.6);
+            font-weight: 100;
+            margin-top: -2px;
+          }
+          &::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: rgba(63,81,181,0.6);
+            font-weight: 100;
+            margin-top: -2px;
+          }
+          &:-ms-input-placeholder { /* Internet Explorer 10+ */
+            color: rgba(63,81,181,0.6);
+            font-weight: 100;
+            margin-top: -2px;
+          }
+        }
+      }
+
+      &:hover label i,
+      &:focus,
+      input:focus * {
+        color: $blue;
+      }
+      &:hover label input,
+      input:focus {
+        width: 100px;
+        opacity: 1;
+      }
+    }
+
+
+
+    .navBar--addProject {
+      float: right;
+      width: 50px;
+      padding: 0;
+      & i.fa,
+      & span {
+        @include transition(all 0.4s ease-out);
+      }
+      &:hover i.fa:after {
+        opacity: 1;
+        top: 100px;
+      }
+      i.fa {
+        color: rgba(0,0,0,0.2);
+        font-size: 1.8rem;
+        cursor: pointer;
+        float: left;
+        @include transition(transform 0.2s ease-out);
+        @include transform-origin(center center);
+
+        &:before {
+          display: block;
+          position: relative;
+          content: "\f067";
+          margin-top: 0px;
+          padding: 16px 18px 15px 18px;
+          background-color: #fff;
+          border-bottom: 1px solid $greyBorder;
+        }
+        &:after {
+          content: 'Add a project';
+          display: block;
+          position: absolute;
+          padding: 15px 13px;
+          width: 154px;
+          height: 50px;
+          /*opacity: 1;
+          top: 100px;*/
+          opacity: 0;
+          top: -60px;
+          right: -51px;
+          font-family: $font-sansserif;
+          text-align: center;
+          color:$blue;
+          background-color: #FFF;
+          border-bottom: 1px solid $greyBorder;
+          border-right: 1px solid $greyBorder;
+          @include transform(rotate(90deg));
+          z-index: -1;
+          @include transition(all 0.4s cubic-bezier(.39,.01,.2,.98));
+        }
+      }
+
+      &.open {
+        background: $blue;
+        height: 50px;
+        border-bottom: 1px solid $blue !important;
+        &:hover i.fa:before {
+          @include animation(buttonRotation 0.4s ease-out 0.2s backwards);
+        }
+        & i.fa {
+          color: #fff !important;
+          background-color: rgba(0,0,0,0) !important;
+          @include transform(rotate(45deg));
+
+          &:before {
+            background-color: rgba(0,0,0,0) !important;
+            border-bottom: 0;
+          }
+          &:after {
+            display: none;
+          }
+          /*@include transform(rotate(45deg));*/
+        }
+
+      }
+    }
+  }
+
+  nav.navBar-tools.hideNav {
+    opacity: 0;
+    @include transform(translateY(-60px));
+  }
+/* ------------------------- */
+
+@include keyframes(buttonRotation){
+  0% { @include transform(rotate(0deg)); }
+  100% { @include transform(rotate(360deg)); }
+}

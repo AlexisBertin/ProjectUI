@@ -1,0 +1,30 @@
+@font-face {
+   font-family: 'calluna';
+	src: url('fonts/Calluna/Calluna-Regular.otf');
+}
+
+@import "bourbon/bourbon";
+
+$blue: #3F51B5; /* rgba(63,81,181,1); */
+$font-sansserif: 'Montserrat', sans-serif;
+/*$font-serif: 'Playfair Display', Georgia, serif;*/
+$font-serif: Georgia, serif;
+$greyBorder: #e5e5e5;
+
+/* --- Dashboard z-index --- */
+$zIndex-header: 100;
+$zIndex-navBar: 50;
+$zIndex-projects: 10;
+$zIndex-overlay: 20;
+/* ------------------------- */
+
+
+.verticalAlign {
+	position: relative;
+	top: 50%;
+	@include transform(translateY(-50%));
+}
+.boxShadowGlobal {
+	-webkit-box-shadow: -3px 3px 10px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: -3px 3px 10px 2px rgba(0, 0, 0, 0.1);
+}
