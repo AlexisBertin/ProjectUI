@@ -1,13 +1,11 @@
-- Quick prototype
+# Quick prototype
 
--- Install
+## Install
 `npm install`
 `bower install`
 
 
-------------------
- To add a project
-------------------
+ ## To add a project
 
 1 - Add it in the 'index.html' in a new <article></article> tab
 2 - Add a data file in 'projectsData/' with an other data file or with 'projectsData/_model.html' as a model.
