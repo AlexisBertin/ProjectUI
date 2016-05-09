@@ -5,10 +5,11 @@
     "Alexis Bertin <alexis.bertin@propylon.com>"
   ],
   "license": "MIT",
+  "directory": "assets/bower_components",
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
+    "assets/bower_components",
     "test",
     "tests"
   ],
